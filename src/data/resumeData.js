@@ -86,6 +86,7 @@ export const projects = [
     name: "HekaBio",
     subtitle: "Smart Healthcare Management Platform · AI-powered",
     company: "Webmob Software Solution",
+    link: "https://staging.heka.bio/sign-in",
     points: [
       "Engineered a component-driven architecture in React that reduced development time for new features and improved consistency across the application.",
       "Developed frontend modules for an AI-powered healthcare platform using React.js, TypeScript, and Redux Toolkit.",
@@ -110,7 +111,6 @@ export const projects = [
     name: "SSHEQ",
     subtitle: "Corporate Compliance App",
     company: "Sartia Global",
-    link: "https://myharmonyuniverse.com",
     points: [
       "Developed a mobile-friendly corporate compliance application using React.js and the Ionic Framework to deliver a seamless cross-platform experience.",
       "Implemented core features such as policy management, claim tracking, and document upload with secure API integrations.",
