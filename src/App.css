@@ -824,7 +824,10 @@
 
 @media (max-width: 600px) {
   .section {
-    padding: 90px 20px;
+    padding: 56px 20px;
+  }
+  .section__heading {
+    margin-bottom: 40px;
   }
   .timeline__item {
     grid-template-columns: 20px 1fr;
