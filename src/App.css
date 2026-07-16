@@ -10,8 +10,10 @@
 .page__blob {
   position: absolute;
   border-radius: 50%;
-  filter: blur(110px);
+  filter: blur(70px);
   opacity: 0.22;
+  will-change: transform;
+  animation: pageDrift 26s ease-in-out infinite;
 }
 .page__blob--1 {
   width: 480px;
@@ -19,6 +21,7 @@
   background: #7c5cff;
   top: 8%;
   left: -8%;
+  animation-duration: 26s;
 }
 .page__blob--2 {
   width: 520px;
@@ -26,6 +29,8 @@
   background: #22d3ee;
   top: 45%;
   right: -10%;
+  animation-duration: 32s;
+  animation-direction: reverse;
 }
 .page__blob--3 {
   width: 420px;
@@ -34,6 +39,26 @@
   bottom: 4%;
   left: 20%;
   opacity: 0.14;
+  animation-duration: 22s;
+  animation-delay: -6s;
+}
+
+@keyframes pageDrift {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(36px, -28px); }
+}
+
+@media (max-width: 760px) {
+  .page__blob {
+    filter: blur(36px);
+    animation: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page__blob {
+    animation: none;
+  }
 }
 
 /* ---------- Layout helpers ---------- */
@@ -216,9 +241,10 @@
 .hero__blob {
   position: absolute;
   border-radius: 50%;
-  filter: blur(90px);
+  filter: blur(60px);
   opacity: 0.35;
   z-index: 0;
+  will-change: transform;
   animation: float 12s ease-in-out infinite;
 }
 .hero__blob--1 {
@@ -278,7 +304,31 @@
   height: min(640px, 70vw);
   transform: translate(-50%, -50%);
   background: radial-gradient(ellipse at center, rgba(124, 92, 255, 0.32), rgba(34, 211, 238, 0.12) 55%, transparent 75%);
-  filter: blur(50px);
+  filter: blur(35px);
+  animation: spotlightBreathe 6s ease-in-out infinite;
+}
+
+@keyframes spotlightBreathe {
+  0%, 100% { opacity: 0.7; transform: translate(-50%, -50%) scale(0.98); }
+  50% { opacity: 1; transform: translate(-50%, -50%) scale(1.03); }
+}
+
+@media (max-width: 760px) {
+  .hero__blob {
+    filter: blur(30px);
+    animation: none;
+  }
+  .hero__spotlight {
+    filter: blur(20px);
+    animation: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__blob,
+  .hero__spotlight {
+    animation: none;
+  }
 }
 
 .hero__content {
