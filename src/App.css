@@ -1,3 +1,52 @@
+/* ---------- Page-wide background ---------- */
+.page__bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.page__grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 54px 54px;
+  -webkit-mask-image: linear-gradient(to bottom, transparent, #000 10%, #000 90%, transparent);
+  mask-image: linear-gradient(to bottom, transparent, #000 10%, #000 90%, transparent);
+}
+
+.page__blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(110px);
+  opacity: 0.22;
+}
+.page__blob--1 {
+  width: 480px;
+  height: 480px;
+  background: #7c5cff;
+  top: 8%;
+  left: -8%;
+}
+.page__blob--2 {
+  width: 520px;
+  height: 520px;
+  background: #22d3ee;
+  top: 45%;
+  right: -10%;
+}
+.page__blob--3 {
+  width: 420px;
+  height: 420px;
+  background: #ff5cad;
+  bottom: 4%;
+  left: 20%;
+  opacity: 0.14;
+}
+
 /* ---------- Layout helpers ---------- */
 .section {
   max-width: 1100px;
