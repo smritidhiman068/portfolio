@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import { AnimatePresence, motion } from "framer-motion";
 
 const links = [
@@ -103,28 +104,31 @@ export default function Navbar() {
         </button>
       </div>
 
-      <AnimatePresence>
-        {open && (
-          <motion.nav
-            className="navbar__overlay"
-            variants={menuList}
-            initial="hidden"
-            animate="show"
-            exit="hidden"
-          >
-            {links.map((l) => (
-              <motion.button
-                key={l.id}
-                variants={menuItem}
-                className={active === l.id ? "navbar__overlay-link--active" : ""}
-                onClick={() => handleClick(l.id)}
-              >
-                {l.label}
-              </motion.button>
-            ))}
-          </motion.nav>
-        )}
-      </AnimatePresence>
+      {createPortal(
+        <AnimatePresence>
+          {open && (
+            <motion.nav
+              className="navbar__overlay"
+              variants={menuList}
+              initial="hidden"
+              animate="show"
+              exit="hidden"
+            >
+              {links.map((l) => (
+                <motion.button
+                  key={l.id}
+                  variants={menuItem}
+                  className={active === l.id ? "navbar__overlay-link--active" : ""}
+                  onClick={() => handleClick(l.id)}
+                >
+                  {l.label}
+                </motion.button>
+              ))}
+            </motion.nav>
+          )}
+        </AnimatePresence>,
+        document.body
+      )}
     </motion.header>
   );
 }
