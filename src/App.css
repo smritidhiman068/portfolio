@@ -818,10 +818,7 @@
     padding: 10px 0;
   }
   .navbar__overlay-link--active {
-    background: var(--accent-grad);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent !important;
+    color: var(--accent-2) !important;
   }
 }
 
