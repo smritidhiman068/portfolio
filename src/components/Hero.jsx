@@ -3,7 +3,7 @@ import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { FiMail, FiPhone, FiLinkedin, FiArrowDown } from "react-icons/fi";
 import { personal } from "../data/resumeData";
 import RotatingText from "./RotatingText";
-import HeroVisual from "./HeroVisual";
+import HeroBackground from "./HeroBackground";
 
 const container = {
   hidden: {},
@@ -58,16 +58,14 @@ export default function Hero() {
         style={{ x: blob3X, y: blob3Y }}
       />
 
+      <HeroBackground />
+
       <motion.div
         className="hero__content"
         variants={container}
         initial="hidden"
         animate="show"
       >
-        <motion.div variants={item}>
-          <HeroVisual />
-        </motion.div>
-
         <motion.span className="hero__eyebrow" variants={item}>
           Hi, I'm
         </motion.span>

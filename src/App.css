@@ -172,7 +172,7 @@
   justify-content: center;
   text-align: center;
   overflow: hidden;
-  padding: 32px;
+  padding: 110px 32px 32px;
 }
 
 .hero__blob {
@@ -213,75 +213,45 @@
   50% { transform: translate(40px, -30px) scale(1.08); }
 }
 
-.hero__visual {
-  position: relative;
-  width: 150px;
-  height: 150px;
-  margin: 0 auto 22px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.hero__visual-glow {
-  position: absolute;
-  inset: -40px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(124, 92, 255, 0.45), rgba(34, 211, 238, 0.15) 55%, transparent 75%);
-  filter: blur(18px);
-  animation: breathe 4s ease-in-out infinite;
-}
-
-@keyframes breathe {
-  0%, 100% { opacity: 0.6; transform: scale(0.94); }
-  50% { opacity: 1; transform: scale(1.05); }
-}
-
-.hero__visual-ring {
+.hero__bg {
   position: absolute;
   inset: 0;
-  border-radius: 50%;
-}
-.hero__visual-ring--outer {
-  background: conic-gradient(from 0deg, #7c5cff, #22d3ee, transparent 40%, #7c5cff);
-  -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 3px), #000 calc(100% - 3px));
-  mask: radial-gradient(farthest-side, transparent calc(100% - 3px), #000 calc(100% - 3px));
-  opacity: 0.7;
-}
-.hero__visual-ring--inner {
-  inset: 16px;
-  border: 1px dashed rgba(124, 92, 255, 0.4);
-}
-.hero__visual-dot {
-  position: absolute;
-  top: -4px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--accent-2);
-  box-shadow: 0 0 14px 3px rgba(34, 211, 238, 0.7);
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
 }
 
-.hero__visual-core {
-  position: relative;
-  width: 84px;
-  height: 84px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 32px;
-  color: #fff;
-  background: var(--accent-grad);
-  box-shadow: 0 0 40px rgba(124, 92, 255, 0.55), 0 0 70px rgba(34, 211, 238, 0.3);
+.hero__grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.055) 1px, transparent 1px);
+  background-size: 54px 54px;
+  -webkit-mask-image: radial-gradient(ellipse 58% 60% at 50% 45%, #000 35%, transparent 82%);
+  mask-image: radial-gradient(ellipse 58% 60% at 50% 45%, #000 35%, transparent 82%);
+}
+
+.hero__spotlight {
+  position: absolute;
+  top: 46%;
+  left: 50%;
+  width: min(1000px, 92vw);
+  height: min(640px, 70vw);
+  transform: translate(-50%, -50%);
+  background: radial-gradient(ellipse at center, rgba(124, 92, 255, 0.32), rgba(34, 211, 238, 0.12) 55%, transparent 75%);
+  filter: blur(50px);
 }
 
 .hero__content {
   position: relative;
   z-index: 1;
   max-width: 760px;
+}
+
+.hero__name,
+.hero__title {
+  text-shadow: 0 4px 30px rgba(5, 6, 12, 0.6);
 }
 
 .hero__eyebrow {
