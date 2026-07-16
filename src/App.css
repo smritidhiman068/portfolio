@@ -53,6 +53,13 @@
     filter: blur(36px);
     animation: none;
   }
+  .navbar--scrolled {
+    background: rgba(11, 12, 20, 0.94);
+    backdrop-filter: none;
+  }
+  .btn--ghost {
+    backdrop-filter: none;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -355,18 +362,11 @@
   font-size: clamp(42px, 8vw, 76px);
   font-weight: 800;
   letter-spacing: -2px;
-  background: linear-gradient(90deg, #7c5cff, #22d3ee, #7c5cff);
-  background-size: 200% auto;
+  background: var(--accent-grad);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
   margin-bottom: 8px;
-  animation: gradientShift 6s ease infinite;
-}
-
-@keyframes gradientShift {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
 }
 
 .hero__title {
