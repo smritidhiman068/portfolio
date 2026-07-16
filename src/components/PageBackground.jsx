@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 export default function PageBackground() {
   return (
     <div className="page__bg" aria-hidden="true">
-      <div className="page__grid" />
       <motion.div
         className="page__blob page__blob--1"
         animate={{ x: [0, 60, 0], y: [0, -40, 0] }}

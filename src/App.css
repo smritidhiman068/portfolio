@@ -7,17 +7,6 @@
   pointer-events: none;
 }
 
-.page__grid {
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(rgba(255, 255, 255, 0.2) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.2) 1px, transparent 1px);
-  background-size: 54px 54px;
-  -webkit-mask-image: linear-gradient(to bottom, transparent, #000 8%, #000 92%, transparent);
-  mask-image: linear-gradient(to bottom, transparent, #000 8%, #000 92%, transparent);
-}
-
 .page__blob {
   position: absolute;
   border-radius: 50%;
@@ -270,6 +259,17 @@
   overflow: hidden;
 }
 
+.hero__grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.2) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.2) 1px, transparent 1px);
+  background-size: 54px 54px;
+  -webkit-mask-image: radial-gradient(ellipse 62% 64% at 50% 45%, #000 40%, transparent 85%);
+  mask-image: radial-gradient(ellipse 62% 64% at 50% 45%, #000 40%, transparent 85%);
+}
+
 .hero__spotlight {
   position: absolute;
   top: 46%;
@@ -452,6 +452,7 @@
 }
 
 .skills__card {
+  height: 100%;
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 18px;

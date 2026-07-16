@@ -28,18 +28,16 @@ export default function Experience() {
               <motion.span
                 className="timeline__dot"
                 initial={{ scale: 0 }}
-                whileInView={{ scale: 1 }}
-                viewport={{ once: true, amount: 0.6 }}
-                transition={{ type: "spring", stiffness: 300, damping: 15, delay: 0.1 }}
+                animate={{ scale: 1 }}
+                transition={{ type: "spring", stiffness: 300, damping: 15, delay: i * 0.12 + 0.3 }}
               />
               {i !== experience.length - 1 && (
                 <span className="timeline__line-track">
                   <motion.span
                     className="timeline__line"
                     initial={{ scaleY: 0 }}
-                    whileInView={{ scaleY: 1 }}
-                    viewport={{ once: true, amount: 0.2 }}
-                    transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+                    animate={{ scaleY: 1 }}
+                    transition={{ duration: 0.8, ease: "easeOut", delay: i * 0.12 + 0.4 }}
                   />
                 </span>
               )}
