@@ -3,19 +3,9 @@ import { FiExternalLink } from "react-icons/fi";
 import { projects } from "../data/resumeData";
 import SectionHeading, { Reveal } from "./Section";
 
-const list = {
-  hidden: {},
-  show: { transition: { staggerChildren: 0.07, delayChildren: 0.1 } },
-};
-
 const fadeUp = {
-  hidden: { opacity: 0, y: 10 },
+  hidden: { opacity: 0, y: 12 },
   show: { opacity: 1, y: 0, transition: { duration: 0.4 } },
-};
-
-const tagPop = {
-  hidden: { opacity: 0, scale: 0.7 },
-  show: { opacity: 1, scale: 1, transition: { duration: 0.3 } },
 };
 
 export default function Projects() {
@@ -50,33 +40,26 @@ export default function Projects() {
               </div>
               <p className="project-card__company">{proj.company}</p>
               <motion.ul
-                variants={list}
+                variants={fadeUp}
                 initial="hidden"
                 whileInView="show"
                 viewport={{ once: true, amount: 0.2 }}
               >
                 {proj.points.map((p, idx) => (
-                  <motion.li key={idx} variants={fadeUp}>
-                    {p}
-                  </motion.li>
+                  <li key={idx}>{p}</li>
                 ))}
               </motion.ul>
               <motion.div
                 className="project-card__tags"
-                variants={list}
+                variants={fadeUp}
                 initial="hidden"
                 whileInView="show"
                 viewport={{ once: true, amount: 0.4 }}
               >
                 {proj.tags.map((t) => (
-                  <motion.span
-                    key={t}
-                    className="tag"
-                    variants={tagPop}
-                    whileHover={{ scale: 1.08, y: -2 }}
-                  >
+                  <span key={t} className="tag">
                     {t}
-                  </motion.span>
+                  </span>
                 ))}
               </motion.div>
             </motion.div>

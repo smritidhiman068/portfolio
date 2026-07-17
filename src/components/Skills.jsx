@@ -2,14 +2,9 @@ import { motion } from "framer-motion";
 import { skillGroups } from "../data/resumeData";
 import SectionHeading, { Reveal } from "./Section";
 
-const list = {
-  hidden: {},
-  show: { transition: { staggerChildren: 0.04 } },
-};
-
-const pill = {
-  hidden: { opacity: 0, scale: 0.8, y: 10 },
-  show: { opacity: 1, scale: 1, y: 0, transition: { duration: 0.35 } },
+const pillGroup = {
+  hidden: { opacity: 0, y: 12 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.4 } },
 };
 
 export default function Skills() {
@@ -28,20 +23,15 @@ export default function Skills() {
               <h3>{group.category}</h3>
               <motion.div
                 className="skills__pills"
-                variants={list}
+                variants={pillGroup}
                 initial="hidden"
                 whileInView="show"
                 viewport={{ once: true, amount: 0.3 }}
               >
                 {group.skills.map((skill) => (
-                  <motion.span
-                    key={skill}
-                    className="pill"
-                    variants={pill}
-                    whileHover={{ scale: 1.08, y: -2 }}
-                  >
+                  <span key={skill} className="pill">
                     {skill}
-                  </motion.span>
+                  </span>
                 ))}
               </motion.div>
             </motion.div>

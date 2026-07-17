@@ -3,13 +3,8 @@ import { experience } from "../data/resumeData";
 import SectionHeading, { Reveal } from "./Section";
 
 const bullets = {
-  hidden: {},
-  show: { transition: { staggerChildren: 0.08, delayChildren: 0.15 } },
-};
-
-const bullet = {
-  hidden: { opacity: 0, x: -12 },
-  show: { opacity: 1, x: 0, transition: { duration: 0.4 } },
+  hidden: { opacity: 0, y: 12 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.4 } },
 };
 
 export default function Experience() {
@@ -64,9 +59,7 @@ export default function Experience() {
                 viewport={{ once: true, amount: 0.2 }}
               >
                 {job.points.map((p, idx) => (
-                  <motion.li key={idx} variants={bullet}>
-                    {p}
-                  </motion.li>
+                  <li key={idx}>{p}</li>
                 ))}
               </motion.ul>
             </motion.div>
